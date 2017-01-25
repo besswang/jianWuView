@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit">
+<title>首页</title>
+<!-- banner -->
+<link href="common.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!-- http://www.open-open.com/lib/view/open1465092897302.html -->
+<!-- http://www.zcfy.cc/article/406 -->
+<a class="page-down" href="#destination"></a>
+<section id="page1" class="page1">
+    <img class="logo lazy" data-original="images/logo.png" alt="">
+    <p class="logo-text"><b>杭州简务网络科技有限公司</b><br>简单务实，用心做企业办公产品</p>
+    <a class="page-down" href="#destination"></a>
+</section>
+<div class="menu">
+    <img class="menu-logo lazy" data-original="images/logo.png" alt="">
+    <span class="menu-title">杭州简务网络科技有限公司</span>
+    <ul class="menu-ul">
+      <li><a href="index.html" class="active">首页</a></li>
+      <li><a href="company.html">我们</a></li>
+      <li><a href="product.html">产品</a></li>
+      <li><a href="case.html">合作案例</a></li>
+      <li><a style="padding-right:0;" href="team.html">团队介绍</a></li>
+    </ul>
+</div>
+<section class="page2" id="destination">
+    <h1 class="big-title">产品介绍</h1>
+    <div class="left-content">
+       <p><span class="title32">移动管家APP</span><br>随时随地，移动办公</p> 
+       <img class="lazy" data-original="images/phone-left.png" alt="">
+    </div>
+    <div class="right-content">
+       <p class="textRight"><span class="title32">移动管家PC用户端</span><br>移动.PC一体化办公，完美协作</p> 
+       <img class="lazy" data-original="images/mac-right.png" alt="">
+    </div>
+</section>
+<!--<section class="page3">-->
+    <!--<h1 class="big-title">合作案例<br><span class="opacity8 small-title">强强联手，给企业提供更好的办公服务</span></h1>-->
+    <!--<div class="left-content">-->
+       <!--<img src="images/left350.png" alt="">-->
+       <!--<p class="center"><span class="title32">中国移动</span><br>China Mobile</p> -->
+    <!--</div>-->
+    <!--<div class="right-content">-->
+       <!--<img class="lazy" data-original="images/right350.png" alt="">-->
+       <!--<p class="center"><span class="title32">杭州简务网络科技有限公司</span></p> -->
+    <!--</div>-->
+<!--</section>-->
+
+<!-- <section class="page4">
+    <div class="left-content">
+       <img style="" src="images/boss.png" alt="">
+    </div>
+    <div class="right-content">
+        <p class="textLight bosstitle">公司领导<br><span class="small-title opacity8">总经理: 徐永杰</span></p>       
+    </div>
+</section> -->
+<section class="page4">
+    <p class="bosstitle">公司领导<br><span style="font-size:30px;" class="small-title">总经理: 徐永杰</span></p>
+</section>
+
+<section class="page5">
+    <form action="">
+        <h3 class="center">期待您的反馈:</h3>
+        <textarea name="" id="" cols="30" rows="8" placeholder="请输入您的意见或建议"></textarea>
+        <button class="btn btn-green">确认提交</button>
+    </form>
+</section>
+<a href="#" name="mao"></a>
+<div class="footer">
+    <div class="f-conter">
+        <span>Copyright&copy;杭州简务网络科技有限公司2015-2016.All Rights Reserved.</span>
+        <ul>
+            <li><a href="index.html">公司简介</a></li>
+<!--             <li><a href="">合作伙伴&sdot;甘肃移动</a></li> -->
+            <li><a href="product.html">产品介绍</a></li>
+            <li><a href="#mao">意见反馈</a></li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/lazy_min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var anchorLink = document.querySelector("a[href='#destination']"),
+                target = document.getElementById("destination");
+        anchorLink.addEventListener("click", function(e) {
+            if (window.scrollTo) {
+                e.preventDefault();
+                window.scrollTo({"behavior": "smooth", "top": target.offsetTop});
+            }
+        })
+        console.log(document.documentElement.clientHeight);
+        var pageHeight=document.documentElement.clientHeight;
+        $("#page1").height(pageHeight);
+        $(".page3").height(pageHeight);
+        //获取要定位元素距离浏览器顶部的距离
+        var menuH = $(".menu").offset().top;
+        //滚动条事件
+        $(window).scroll(function(){
+            //获取滚动条的滑动距离
+            var scroH = $(this).scrollTop();
+            //滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离，就固定，反之就不固定
+            if(scroH>=menuH){
+                $(".menu").css({"position":"fixed","top":0});
+            }else if(scroH<menuH){
+                $(".menu").css({"position":"static"});
+            }
+        });
+    });
+</script>
+</body>
+</html>
+
+

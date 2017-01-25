@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="renderer" content="webkit">
+<title>案例</title>
+<!-- banner -->
+<link href="common.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="menu" style="position:fixed;top:0;">
+    <img class="menu-logo" src="images/logo.png" alt="">
+    <span class="menu-title">杭州简务网络科技有限公司</span>
+    <ul class="menu-ul">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="company.html">我们</a></li>
+      <li><a href="product.html">产品</a></li>
+      <li><a href="case.html" class="active">合作案例</a></li>
+      <li><a style="padding-right:0;" href="team.html">团队介绍</a></li>
+    </ul>
+</div>
+<!--<section class="page3" style="height:820px;">-->
+    <!--<h1 class="big-title">合作案例<br><span class="opacity8 small-title">强强联手，给企业提供更好的办公服务</span></h1>-->
+    <!--<div class="left-content">-->
+       <!--<img src="images/left350.png" alt="">-->
+       <!--<p class="center"><span class="title32">中国移动</span><br>China Mobile</p>-->
+    <!--</div>-->
+    <!--<div class="right-content">-->
+       <!--<img src="images/right350.png" alt="">-->
+       <!--<p class="center"><span class="title32">杭州简务网络科技有限公司</span></p>-->
+    <!--</div>-->
+<!--</section>-->
+<!--<div style="height:320px;"></div>-->
+<!--<h1 class="big-title">合作案例<br><span class="opacity8 small-title">强强联手，给企业提供更好的办公服务</span></h1>-->
+<div class="div1024 page7">
+   <div class="div_box1024 page7_box">
+      <p>杭州简务网络科技有限公司与甘肃移动从2015年合作至今，已经为超过4000家企业提供了办公服务，为他们提高了工作效率、节省了企业沟通成本。</p>
+      <div class="left50">
+          <h2>企业</h2>
+          <a href="">
+              <img src="images/case-cpmpany.png" alt="">
+              <span>加强了职能部门之间的协作配合，提高了企业办公的效率，发挥团队和管理的最佳效能</span>
+          </a>
+      </div>
+      <div class="right50">
+          <h2>员工</h2>
+          <a href="">
+              <img src="images/case-staff.png" alt="">
+              <span>工作效率高，沟通无界限，远离加班哦</span>
+          </a>
+      </div>
+   </div>
+</div>
+<div class="footer">
+    <div class="f-conter">
+        <span>Copyright&copy;杭州简务网络科技有限公司2015-2016.All Rights Reserved.</span>
+        <ul>
+            <li><a href="index.html">公司简介</a></li>
+<!--             <li><a href="">合作伙伴&sdot;甘肃移动</a></li> -->
+            <li><a href="product.html">产品介绍</a></li>
+            <li><a href="index.html">意见反馈</a></li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+</body>
+</html>
+<script>
+
+$(function(){
+      var anchorLink = document.querySelector("a[href='#destination']"),
+      target = document.getElementById("destination");
+      anchorLink.addEventListener("click", function(e) {
+        if (window.scrollTo) {
+            e.preventDefault();
+            window.scrollTo({"behavior": "smooth", "top": target.offsetTop});
+        }
+      })
+
+      console.log(document.documentElement.clientHeight);
+      var pageHeight=document.documentElement.clientHeight;
+      $("#page1").height(pageHeight);
+      $(".page3").height(pageHeight);
+      //获取要定位元素距离浏览器顶部的距离
+      var menuH = $(".menu").offset().top;
+      //滚动条事件
+      $(window).scroll(function(){
+          //获取滚动条的滑动距离
+          var scroH = $(this).scrollTop();
+          //滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离，就固定，反之就不固定
+          if(scroH>=menuH){
+              $(".menu").css({"position":"fixed","top":0});
+          }else if(scroH<menuH){
+              $(".menu").css({"position":"static"});
+          }
+      });
+});
+</script>
+
